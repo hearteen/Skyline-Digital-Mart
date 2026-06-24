@@ -1,0 +1,57 @@
+/* Admin Specific Styles */
+.admin-form {
+    background: #fff; padding: 25px; border-radius: 15px;
+    border: 1px solid #E2E8F0; margin-bottom: 30px;
+}
+.form-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;
+}
+.admin-form input {
+    padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none;
+}
+.admin-form input:focus { border-color: var(--cyan-glow); box-shadow: 0 0 10px var(--cyan-glow); }
+
+/* Glow Status Labels */
+.accepted-glow { color: #22C55E; text-shadow: 0 0 8px #22C55E; font-weight: bold; }
+.pending-glow { color: #F59E0B; text-shadow: 0 0 8px #F59E0B; font-weight: bold; }
+.rejected-glow { color: #EF4444; text-shadow: 0 0 8px #EF4444; font-weight: bold; }
+
+
+/* Inventory Form Layout */
+.inventory-form { display: flex; flex-direction: column; gap: 20px; padding-top: 15px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+}
+
+.input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #555; }
+.input-group input { 
+    width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; transition: 0.3s;
+}
+
+.input-group input:focus { 
+    border-color: var(--cyan-glow); box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); 
+}
+
+.btn-add {
+    background: var(--primary-blue); color: white; padding: 15px; border: none; border-radius: 10px;
+    font-weight: 700; cursor: pointer; transition: 0.4s;
+}
+
+.btn-add:hover { box-shadow: 0 0 20px var(--cyan-glow); transform: translateY(-2px); }
+
+/* Stock Badges */
+.stock-badge { padding: 5px 12px; border-radius: 15px; font-weight: bold; color: white; }
+.red-glow-bg { background: #EF4444; box-shadow: 0 0 10px #EF4444; } /* Alert for Low Stock */
+.green-glow-bg { background: #22C55E; box-shadow: 0 0 10px #22C55E; }
+
+.mt-30 { margin-top: 30px; }
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .admin-table thead { display: none; }
+    .admin-table td { display: block; text-align: right; border: none; position: relative; padding-left: 50%; }
+    .admin-table td::before { content: attr(data-label); position: absolute; left: 0; width: 50%; padding-left: 15px; font-weight: bold; text-align: left; }
+}
+
